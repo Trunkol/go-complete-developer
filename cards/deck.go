@@ -2,8 +2,7 @@ package main
 
 import "fmt"
 
-// Criando um novo tipo "Deck"
-// Que é uma slice de string
+// New type dec
 type deck []string
 
 func (d deck) print() {
@@ -16,7 +15,7 @@ func newDeck() deck {
 	cards := deck{}
 
 	cardSuits := []string{"Spades", "Hearts", "Diamonds", "Clubs"}
-	cardValues := []string{"Ace", "Two", "Three", "Four"}
+	cardValues := []string{"Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Nine", "Eigth"}
 
 	for _, suit := range cardSuits {
 		for _, value := range cardValues {
@@ -25,4 +24,8 @@ func newDeck() deck {
 	}
 
 	return cards
+}
+
+func deal(d deck, handSize int) (deck, deck) {
+	return d[:handSize], d[handSize:]
 }
