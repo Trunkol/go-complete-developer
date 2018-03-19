@@ -1,5 +1,7 @@
 package main
 
 func main() {
-	cards := newDeck()
+	cards := newDeckFromFile("cardsz")
+
+	cards.print()
 }
