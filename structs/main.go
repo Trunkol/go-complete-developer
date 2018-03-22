@@ -18,12 +18,21 @@ type person struct {
 func main() {
 	jim := person{
 		firstName: "Jim",
-		lastName:  "Anderson",
+		lastName:  "a",
 		contactInfo: contactInfo{
 			email:   "jim@server.com",
 			zipCode: 12345,
 		},
 	}
 
-	fmt.Printf("%+v", jim)
+	jim.updateName("Emerson")
+	jim.print()
+}
+
+func (p person) print() {
+	fmt.Printf("%+v", p)
+}
+
+func (p *person) updateName(newFirstName string) {
+	p.firstName = newFirstName
 }
